@@ -1,0 +1,23 @@
+<script>
+  var add = function(a, b) {
+    return a + b;
+  };
+
+  var addition = function(a) {
+    return function(b) {
+      return a + b;
+    };
+  };
+
+  var sum = add(1, 2);
+  console.log("Result of add(): ", sum);
+  document.write("Result of add(): ", sum);
+  // var sum1 = addition(1);
+  // var finalSum = sum1(2);
+  // console.log("Result of addition(): ",finalSum);
+
+  var add = addition(1)(2);
+  console.log("Result of addition(): ", add);
+
+  document.write("<br>Result of addition(): ", add)
+</script>

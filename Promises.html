@@ -1,0 +1,49 @@
+<script>
+var cleanRoom = function(){
+  return new Promise(function(resolve,reject)
+{
+  resolve(" Room Cleaned");
+});
+};
+var removeGarbage = function(message){
+  return new Promise(function(resolve,reject)
+{
+  resolve(message + " Garbage Removed");
+});
+};
+var winIcecream = function(message){
+  return new Promise(function(resolve,reject)
+{
+  resolve(message + " won ice-cream");
+});
+};
+/*
+    If we want to define dependancy on execution of functions
+*/
+cleanRoom().then(function(result)
+{
+  return removeGarbage(result);
+}).then(function(result){
+  return winIcecream(result);
+}).then(function(result)
+{
+  console.log("All Finished" +result);
+  document.write("All Finished" +result);
+})
+
+/*
+    If we dont want to define the dependancy then use this code
+*/
+// Promise.all([cleanRoom(),removeGarbage(),winIcecream()]).then(function()
+// {
+//   console.log("All task finished");
+// })
+
+/*
+    If we want to check atleast one task is Finished
+*/
+// Promise.race([cleanRoom(),removeGarbage(),winIcecream()]).then(function()
+// {
+//   console.log("one task finished");
+// })
+</script>

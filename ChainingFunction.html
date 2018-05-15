@@ -1,0 +1,26 @@
+<script>
+  var object = function() {
+    var i = 10;
+    var addition = function(j) {
+      i = i + j;
+      return this;
+    };
+    this.substract = function(j) {
+      i = i - j;
+      return this;
+    };
+    this.print = function() {
+      document.write("print() result: ", i);
+      console.log("print() result: ", i);
+    };
+    return {
+      addition: addition,
+      substract: substract,
+      print: print
+    };
+
+  };
+  var chaining = object();
+  chaining.addition(3).substract(2).print();
+  //  console.log(chaining);
+</script>

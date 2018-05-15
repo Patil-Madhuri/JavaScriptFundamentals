@@ -1,0 +1,17 @@
+<script>
+  var add = function(a, b) {
+    return a + b;
+  };
+  var multiply = function(a, b) {
+    return a * b;
+  };
+  var calculator = function(num1, num2, callback) {
+    if (typeof callback === "function") {
+      return callback(num1, num2);
+    } else {
+      console.log("Your calling callback function is not function");
+    }
+  };
+  console.log("addition: ", calculator(20, 30, add));
+  console.log("multiply:", calculator(20, 30, multiply));
+</script>

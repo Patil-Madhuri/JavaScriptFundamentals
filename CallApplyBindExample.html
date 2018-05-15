@@ -1,0 +1,44 @@
+<script>
+  var object = {
+    num: 5
+  };
+  var addToThis = function(a, b, c) {
+    return this.num + a + b + c;
+  };
+  /*
+    call() takes any arguments separately
+  */
+  console.log("Result of call(): ", addToThis.call(object, 10, 20, 30));
+  document.write("Result of call(): ", addToThis.call(object, 10, 20, 30));
+
+  /*
+    apply() takes any arguments as an array
+  */
+  var array = [10, 20, 30];
+  console.log("Result of apply(): ", addToThis.apply(object, array));
+  document.write("<br>Result of apply(): ", addToThis.apply(object, array));
+
+  /*
+     bind() function creates a new bound function
+  */
+  var bound = addToThis.bind(object);
+  console.log("Result of bind(): ", bound(10, 15, 20));
+  document.write("<br>Result of bind(): ", bound(10, 15, 20));
+</script>
+
+<!-- <script>
+var sayWhat = function(a)
+{
+  return function(b)
+  {
+    return function(c) {
+      console.log("saying "+ a +'to ' + b +" using "+c);
+    }
+  }
+};
+//sayWhat("hello ")("friends")("Javascript");
+
+var sayHi = sayWhat("hi ");
+var sayHiToMe = sayHi("me");
+var sayHiToMeUsingNothing  =sayHiToMe("nothing");
+</script> -->
