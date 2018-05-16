@@ -7,10 +7,19 @@
  **********************************************************************************/ -->
 <script>
   function init() {
-    var string = "Hello.......";  // string is a local variable created by init function
-    function displayString() {    // displayName() is the inner function, a closure
-      alert(string);               // displayName() uses string variable declared in the parent function
-      console.log("Message: ",string);
+    /*
+       string is a local variable created by init function
+    */
+    var string = "Hello.......";
+    /*
+       displayName() is the inner function, a closure
+    */
+    function displayString() {
+      alert(string);
+      /*
+           displayName() uses string variable declared in the parent function
+      */
+      console.log("Message: ", string);
     }
     displayString();
   }

@@ -6,10 +6,17 @@
  *  @since          : 15-05-2018
  **********************************************************************************/ -->
 <script>
+  /*
+      normal JavaScript function to perform addition
+  */
   var add = function(a, b) {
     return a + b;
   };
-
+  /*
+    --Currying Method for performing addition
+    --Currying is the process of breaking down a function into a series of
+     functions that each take a single argument.
+  */
   var addition = function(a) {
     return function(b) {
       return a + b;

@@ -8,18 +8,30 @@
 <script>
   var object = function() {
     var i = 10;
+    /*
+      perform addition and return result
+    */
     var addition = function(j) {
       i = i + j;
       return this;
     };
+    /*
+      perform substarction and return result
+    */
     this.substract = function(j) {
       i = i - j;
       return this;
     };
+    /*
+      print the result
+    */
     this.print = function() {
       document.write("print() result: ", i);
       console.log("print() result: ", i);
     };
+    /*
+        return result
+    */
     return {
       addition: addition,
       substract: substract,
@@ -28,6 +40,8 @@
 
   };
   var chaining = object();
+  /*
+    function chaining allow multiple cammands to run one after other on same element
+  */
   chaining.addition(3).substract(2).print();
-  //  console.log(chaining);
 </script>

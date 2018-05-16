@@ -5,12 +5,22 @@
  *  @version        : 1.0
  *  @since          : 15-05-2018
  **********************************************************************************/ -->
-<!-- Hoisting is JavaScript's default behavior of moving declarations to the top. -->
+ <!-- Hoisting is JavaScript's default behavior of moving declarations to the top.
+      Hoisting is not supported for the variable declaration-->
 <script>
+/*
+    function Hoisting
+*/
   addition(10,20);
-
   function addition(a,b) {
     console.log("addition: ",a+b);
     document.write("addition: ",a+b)
   }
+
+  /*
+    variable Hoisting
+  */
+  console.log("value of i: ",i=10);
+  document.write("<br>value of i: ",i=10);
+  var i;
 </script>
